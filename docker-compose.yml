@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  pyautogui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./output:/output
+    command: python test.py
+    environment:
+      - DISPLAY=:99
+      - WIDTH=1920
+      - HEIGHT=1080
+      - DEPTH=24
+      - URL=https://kareem.one
